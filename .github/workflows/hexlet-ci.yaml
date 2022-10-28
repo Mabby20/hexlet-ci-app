@@ -13,14 +13,14 @@ jobs:
           cache: 'npm'
       - name: setup
         run: make setup
-      - name: snyk start
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name : start test
         run: make test
       - name: start eslint
         run: make lint
+      - name: snyk-start
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
 
 
