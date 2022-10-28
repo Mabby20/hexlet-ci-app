@@ -1,4 +1,5 @@
 name: hexlet-ci
+on: push
 jobs:
   build and test:
     runs-on: ubuntu-latest
