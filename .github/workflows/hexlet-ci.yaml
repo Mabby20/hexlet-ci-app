@@ -6,12 +6,12 @@ jobs:
     steps:
       - name: clone rep
         uses: actions/checkout@v2
-      - name: install node
-        uses: actions/setup-node@v1
+      - name: install node => 12 and <=16
+        uses: actions/setup-node@v3
+        with:
+          node-version: '15.x'
       - name: setup
         run: make setup
-      - name: start
-        run: make start
       - name : start test
         run: make test
       - name: start eslint
