@@ -1,0 +1,20 @@
+name: hexlet-ci
+jobs:
+  build and test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone rep
+        uses: actions/checkout@v2
+      - name: install node
+        uses: actions/setup-node@v1
+      - name: setup
+        run: make setup
+      - name: start
+        run: make start
+      - name : start test
+        run: make test
+      - name: start eslint
+        run: make lint
+
+
+
